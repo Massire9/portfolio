@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center ">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil</a>
+                    <a class="nav-link" href="">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('chemin_sio') }}">SIO</a>

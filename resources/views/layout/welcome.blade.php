@@ -8,7 +8,7 @@
 <body>
 <div id="page">
     <div id="entete">
-        <h1>Suivi du remboursement des frais</h1>
+        <h1 class="text-center">Portfolio : Massiré Touré</h1>
     </div>
     @yield('navbar')
     @yield('contenu1')
