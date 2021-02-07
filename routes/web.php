@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\navigationPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('accueil');
 });
 
-Auth::routes();
+Route::get('sio',[
+    'as'=>'chemin_sio',
+    'uses'=>'App\Http\Controllers\navigationPage@sio'
+]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

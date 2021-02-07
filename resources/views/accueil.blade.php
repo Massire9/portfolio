@@ -1,4 +1,4 @@
 @extends('navbar')
 @section('contenu1')
-    <p>Bienvenu sur mon portfolio</p>
+    <p>Bienvenue sur mon portfolio</p>
 @endsection
