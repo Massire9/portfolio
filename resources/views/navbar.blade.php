@@ -12,7 +12,7 @@
                     <a class="nav-link" href="#">CV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Projets</a>
+                    <a class="nav-link" href="{{ route('chemin_listeProjets') }}">Projets</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Stage</a>

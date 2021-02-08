@@ -22,3 +22,8 @@ Route::get('sio',[
     'uses'=>'App\Http\Controllers\navigationPage@sio'
 ]);
 
+Route::get('listeProjets',[
+    'as'=>'chemin_listeProjets',
+    'uses'=>'App\Http\Controllers\navigationPage@listeProjets'
+]);
+
