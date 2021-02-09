@@ -1,5 +1,6 @@
 <?php
 namespace App\MyApp;
+use mysql_xdevapi\Exception;
 use PDO;
 use Illuminate\Support\Facades\Config;
 class monPdo
@@ -46,4 +47,31 @@ class monPdo
         $lesLignes = $rs->fetchAll();
         return $lesLignes;
     }
+
+    public function getUnMembre($login, $mdp)
+    {
+        $req = "SELECT *
+                FROM membre
+                WHERE login = '$login' AND mdp = '$mdp'";
+        $rs = $this->monPdo->query($req);
+        $laLigne = $rs->fetch();
+        return $laLigne;
+    }
+
+    public function getLesMembre()
+    {
+        $req = "SELECT *
+                FROM membre";
+        $rs = $this->monPdo->query($req);
+        $lesLignes = $rs->fetchAll();
+        return $lesLignes;
+    }
+
+    public function inscription($nom, $prenom, $mail, $login, $mdp, $tel)
+    {
+        $req = "INSERT INTO membre(nom, prenom, mail, login, mdp, telephone, role) values ('$nom', '$prenom', '$mail', '$login', '$mdp', '$tel', 0)";
+        $this->monPdo->exec($req);
+
+    }
+
 }

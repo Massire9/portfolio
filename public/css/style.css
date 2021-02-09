@@ -1,0 +1,25 @@
+#login, #mdp, #nom, #prenom, #email, #tel
+{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#erreurs
+{
+    background-color: rgb(237, 210, 229);
+    color: rgb(203, 28, 128);
+    font-size: 1.1em;
+    width: 95%;
+}
+
+#message
+{
+    background-color: rgb(99, 184, 255);
+    color: rgb(0, 0, 205);
+    font-size: 1.1em;
+    width: 95%;
+}
+#sisr
+{
+    margin-left: 30%;
+    margin-right: 15%;
+}

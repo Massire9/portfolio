@@ -19,6 +19,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+    protected $except = [
+        'stripe/*',
+        'localhost:8000/*',
+        'http://example.com/foo/*',
+    ];
+
     /**
      * The controller namespace for the application.
      *

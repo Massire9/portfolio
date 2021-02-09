@@ -27,3 +27,28 @@ Route::get('listeProjets',[
     'uses'=>'App\Http\Controllers\navigationPage@listeProjets'
 ]);
 
+Route::get('connexion',[
+    'as'=>'chemin_connexion',
+    'uses'=>'App\Http\Controllers\connexion@afficherConnexion'
+]);
+
+Route::post('validerConnexion',[
+    'as'=>'chemin_validerConnexion',
+    'uses'=>'App\Http\Controllers\connexion@validerConnexion'
+]);
+
+Route::get('inscription',[
+    'as'=>'chemin_inscription',
+    'uses'=>'App\Http\Controllers\connexion@afficherInscrip'
+]);
+
+Route::post('validerInscription',[
+    'as'=>'chemin_validerInscription',
+    'uses'=>'App\Http\Controllers\connexion@validerInscription'
+]);
+
+Route::get('deconnexion',[
+    'as'=>'chemin_deconnexion',
+    'uses'=>'App\Http\Controllers\connexion@deconnexion'
+]);
+
