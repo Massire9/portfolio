@@ -20,6 +20,12 @@
 }
 #sisr
 {
-    margin-left: 30%;
+    margin-left: 15%;
+    text-align: center;
+}
+
+#slam
+{
     margin-right: 15%;
+    text-align: center;
 }

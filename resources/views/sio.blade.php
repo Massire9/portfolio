@@ -10,18 +10,20 @@
         C'est un diplôme de niveau bac +2 qui se prépare en formation initiale mais aussi en alternance dans des établissements publics et privés.</p>
 </div>
     <br>
-    <div class="container d-inline">
-        <div class="row">
-            <div class="col-md-5 text-center">
-                <h4>Option : SISR <br> Solutions d’infrastructure, systèmes et réseaux </h4>
-                <p class="text-justify text-center">La spécialisation SISR du BTS SIO permet d’apprendre un métier qui consiste à installer,
-                    configurer et gérer les équipements et les réseaux informatiques.
+    <div class="card-deck">
+        <div class="card bg-danger shadow" style="width: 18rem" id="sisr">
+            <div class="card-body">
+                <h5 class="card-title">Option : SISR <br> Solutions d’infrastructure, systèmes et réseaux </h5>
+                <p class="card-text">La spécialisation SISR du BTS SIO permet d’apprendre un métier qui consiste à installer,
+                    configurer et gérer les équipements et les réseaux informatiques. <br>
                     Cela signifie intervenir sur la conception, la mise en place,
                     le déploiement et la maintenance de programmes destinés à la gestion au sein d’une organisation.</p>
             </div>
-            <div class="col-sm-7 text-center">
-                <h4>Option : SLAM <br> Solutions Logicielles et Applications Métier</h4>
-                <p class="text-justify text-center">La spécialisation SLAM du BTS SIO est elle plus orientée développement.
+        </div>
+        <div class="card bg-info shadow" style="width: 18rem" id="slam">
+            <div class="card-body">
+                <h5 class="card-title">Option : SLAM <br> Solutions Logicielles et Applications Métier</h5>
+                <p class="card-text">La spécialisation SLAM du BTS SIO est elle plus orientée développement.
                     Elle permet d'apprendre à réaliser des logiciels, sites webs, applications mobiles, mais aussi de rédiger des documentations techniques liées à celles-ci.
                     <br>
                     De plus, elle permet d'apprendre à former des utilisateurs pour gérer la maintenance des applications.</p>
