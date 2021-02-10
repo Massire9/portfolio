@@ -22,4 +22,17 @@ class navigationPage extends Controller
             ->with('lesProjets', $lesProjets);
         return $view;
     }
+
+    public function cv()
+    {
+        $monPdo = new monPdo();
+        $lesExperiences = $monPdo->getLesExperiences();
+        $lesCompetences = $monPdo->getLesCompetences();
+        $lesFormations =  $monPdo->getLaScolarite();
+
+        return view('cv')
+                ->with('lesFormations', $lesFormations )
+                ->with('lesCompetences', $lesCompetences)
+                ->with('lesExperiences', $lesExperiences);
+    }
 }

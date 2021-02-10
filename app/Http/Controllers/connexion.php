@@ -21,10 +21,19 @@ class connexion extends Controller
         $login = $request['login'];
         $mdp = $request['mdp'];
         $infoMembre = $monPdo->getUnMembre($login, $mdp);
+
         if(is_array($infoMembre))
         {
             session(['membre' => $infoMembre]);
-            $view = redirect(route('chemin_sio'));
+            switch($infoMembre['role'])
+            {
+                case '0':
+                    $view = redirect(route('chemin_sio'));
+                    break;
+                case '1':
+                    $view = redirect(route('chemin_editerCV'));
+                    break;
+            }
         }
         else
         {

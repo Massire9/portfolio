@@ -17,7 +17,7 @@
                         <div class="carousel-inner">
                             @foreach($lesImages as $k => $img)
                             <div class="carousel-item {{ ($k == 0) ? "active" : ""}}">
-                                <a data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top d-block w-100" style="height: 8rem" src="images/{{ $img }}"></a>
+                                <a data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top d-block w-100" style="height: 8rem" src="images/projets/{{ $img }}"></a>
                             </div>
                             @endforeach
                         </div>

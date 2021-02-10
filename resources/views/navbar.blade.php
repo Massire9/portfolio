@@ -10,7 +10,7 @@
                     <a class="nav-link" href="{{ route('chemin_sio') }}">SIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CV</a>
+                    <a class="nav-link" href="{{ route('chemin_cv') }}">CV</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('chemin_listeProjets') }}">Projets</a>

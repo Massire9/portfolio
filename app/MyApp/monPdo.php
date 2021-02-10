@@ -71,7 +71,106 @@ class monPdo
     {
         $req = "INSERT INTO membre(nom, prenom, mail, login, mdp, telephone, role) values ('$nom', '$prenom', '$mail', '$login', '$mdp', '$tel', 0)";
         $this->monPdo->exec($req);
+    }
 
+    public function getLesCompetences()
+    {
+        $req = "SELECT *
+                FROM competences
+                ORDER BY ordre ASC";
+        $rs = $this->monPdo->query($req);
+        $lesLignes = $rs->fetchAll();
+        return $lesLignes;
+    }
+    public function getUneCompetence($id)
+    {
+        $req = "SELECT *
+                FROM competences
+                WHERE id = '$id'";
+        $rs = $this->monPdo->query($req);
+        $laLigne = $rs->fetch();
+        return $laLigne;
+    }
+
+    public function majCompetence($id, $nom, $descripion, $ordre)
+    {
+        $req = "UPDATE competences
+                SET nom = '$nom', description = '$descripion', ordre = '$ordre'
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+    public function ajtCompetence($nom, $descripion, $ordre)
+    {
+        $req = "INSERT INTO competences(nom, description, ordre) values ('$nom', '$descripion', '$ordre')";
+        $this->monPdo->exec($req);
+    }
+
+    ////
+
+    public function getLesExperiences()
+    {
+        $req = "SELECT *
+                FROM experiences
+                ORDER BY ordre ASC";
+        $rs = $this->monPdo->query($req);
+        $lesLignes = $rs->fetchAll();
+        return $lesLignes;
+    }
+    public function getUneExperience($id)
+    {
+        $req = "SELECT *
+                FROM experiences
+                WHERE id = '$id'";
+        $rs = $this->monPdo->query($req);
+        $laLigne = $rs->fetch();
+        return $laLigne;
+    }
+
+    public function majExperience($id, $nom, $date, $descripion, $ordre)
+    {
+        $req = "UPDATE experiences
+                SET nom = '$nom', date = '$date', description = '$descripion', ordre = '$ordre'
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+
+    public function ajtExperience($nom, $description, $date, $ordre)
+    {
+        $req = "INSERT INTO experiences (nom, description, date, ordre) values('$nom', '$description', '$date', '$ordre')";
+        $this->monPdo->exec($req);
+    }
+
+    ////
+    public function getLaScolarite()
+    {
+        $req = "SELECT *
+                FROM scolarite
+                ORDER BY ordre ASC";
+        $rs = $this->monPdo->query($req);
+        $lesLignes = $rs->fetchAll();
+        return $lesLignes;
+    }
+    public function getUneFormation($id)
+    {
+        $req = "SELECT *
+                FROM scolarite
+                WHERE id = '$id'";
+        $rs = $this->monPdo->query($req);
+        $laLigne = $rs->fetch();
+        return $laLigne;
+    }
+    public function majScolarite($id, $diplome, $filiere, $ville, $annee, $ordre)
+    {
+        $req = "UPDATE scolarite
+                SET diplome = '$diplome', filiere = '$filiere', ville = '$ville', annee = '$annee', ordre = '$ordre'
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+
+    public function ajtScolarite($diplome, $filiere, $annee, $ordre, $ville)
+    {
+        $req = "INSERT INTO scolarite (diplome, filiere, annee, ordre, ville) values ('$diplome', '$filiere', '$annee', '$ordre', '$ville')";
+        $this->monPdo->exec($req);
     }
 
 }

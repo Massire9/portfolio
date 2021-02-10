@@ -27,6 +27,7 @@
         <h1 class="text-center">Portfolio : Massiré Touré</h1>
     </div>
     @yield('navbar')
+    @yield('navbarAdmin')
     @yield('contenu1')
     @yield('contenu2')
     @yield('pied')
