@@ -28,7 +28,7 @@
             @endforeach
             </tbody>
         </table>
-        <small><a href="href="{{ route('chemin_ajtScolarite') }}">Ajouter une formation</a></small>
+        <small><a href="{{ route('chemin_ajtScolarite') }}">Ajouter une formation</a></small>
     </div>
     <div class="table">
         <table class="table table-striped table-condensed" id ="experience">

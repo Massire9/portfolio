@@ -15,14 +15,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                @foreach($lesFormations as $uneFormation)
+            @foreach($lesFormations as $uneFormation)
+                <tr>
                     <td>{{$uneFormation['annee']}}</td>
                     <td>{{$uneFormation['diplome']}}</td>
                     <td>{{$uneFormation['filiere']}}</td>
                     <td>{{$uneFormation['ville']}}</td>
-                @endforeach
-            </tr>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
@@ -40,13 +40,13 @@
             </tr>
             </thead>
             <tbody>
+            @foreach($lesExperiences as $uneCompetence)
             <tr>
-                @foreach($lesExperiences as $uneCompetence)
                     <td>{{$uneCompetence['nom']}}</td>
                     <td>{{$uneCompetence['date']}}</td>
                     <td>{{$uneCompetence['description']}}</td>
-                @endforeach
             </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
@@ -63,12 +63,12 @@
             </tr>
             </thead>
             <tbody>
+            @foreach($lesCompetences as $uneCompetence)
             <tr>
-                @foreach($lesCompetences as $uneCompetence)
                     <td>{{$uneCompetence['nom']}}</td>
                     <td>{{$uneCompetence['description']}}</td>
-                @endforeach
             </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

@@ -45,6 +45,24 @@ class gestion extends Controller
         $monPdo->majScolarite($id, $diplome, $ville, $filiere, $annee, $ordre);
         return redirect(route('chemin_editerCV'));
     }
+    public function afficherAjtScolarite()
+    {
+        return view('ajouterScolarite');
+    }
+
+    public function validerAjtScolarite(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
+
+        $diplome = $request['diplome'];
+        $filiere = $request['filiere'];
+        $annee = $request['annee'];
+        $ordre = $request['ordre'];
+        $ville = $request['ville'];
+        $monPdo->ajtScolarite($diplome, $filiere, $annee, $ordre, $ville);
+        return redirect(route('chemin_editerCV'));
+    }
 
     public function afficherMajCompetence(Request $request)
     {
