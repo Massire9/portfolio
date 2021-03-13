@@ -17,7 +17,6 @@ class navigationPage extends Controller
         $monPdo = new monPdo();
         $lesProjets = $monPdo->getLesProjets();
 
-
         $view = view('listeProjets')
             ->with('lesProjets', $lesProjets);
         return $view;
@@ -34,5 +33,16 @@ class navigationPage extends Controller
                 ->with('lesFormations', $lesFormations )
                 ->with('lesCompetences', $lesCompetences)
                 ->with('lesExperiences', $lesExperiences);
+    }
+
+    public function afficherContact()
+    {
+        $erreurs = null;
+        if(!is_array(session('membre')))
+        {
+            $erreurs[] = "Vous n'êtes pas connecté !";
+        }
+        return view('contact')
+            ->with('erreurs', $erreurs);
     }
 }

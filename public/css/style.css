@@ -1,4 +1,4 @@
-#login, #mdp, #nom, #prenom, #email, #tel
+#login, #mdp, #nom, #prenom, #email, #tel, #corps
 {
     margin: 0 auto;
     margin-bottom: 20px;
@@ -30,3 +30,6 @@
     text-align: center;
 }
 
+#cardProjet{
+    width: 50%;
+}

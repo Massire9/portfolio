@@ -54,7 +54,7 @@
         <table class="table table-striped table-condensed" id ="competences">
             <thead>
             <tr>
-                <th colspan="4"> Competences</th>
+                <th colspan="4"><h5>Competences</h5> </th>
             </tr>
             <tr>
                 <th scope="col" style=" width: 10%">Nom</th>

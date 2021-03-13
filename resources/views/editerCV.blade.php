@@ -23,7 +23,7 @@
                 <td>{{$uneFormation['filiere']}}</td>
                 <td>{{$uneFormation['ville']}}</td>
                 <td><a href="{{route('chemin_majScolarite', ['id' => $uneFormation['id']])}}"><img src="{{asset('images/utils/edit.png')}}" width="15%" alt=""></a></td>
-                <td><a href=""><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
+                <td><a href="{{ route('chemin_suppFormation', ['id' => $uneFormation['id']]) }}" onclick="return confirm('Voulez-vous vraiment supprimer cette formation ?')"><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
             </tr>
             @endforeach
             </tbody>
@@ -51,7 +51,7 @@
                     <td>{{$uneExperience['date']}}</td>
                     <td>{{$uneExperience['description']}}</td>
                     <td><a href="{{ route('chemin_majExperience', ['id' => $uneExperience['id']] ) }}"><img src="{{asset('images/utils/edit.png')}}"width="15%" alt=""></a></td>
-                    <td><a href=""><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
+                    <td><a href="{{ route('chemin_suppExperience', ['id' => $uneExperience['id']]) }}" onclick="return confirm('Voulez-vous vraiment supprimer cette experience ?')"><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
             </tr>
             @endforeach
             </tbody>
@@ -77,7 +77,7 @@
                         <td>{{$uneCompetence['nom']}}</td>
                         <td>{{$uneCompetence['description']}}</td>
                         <td><a href="{{route('chemin_majCompetence', ['id' => $uneCompetence['id']])}}"><img src="{{asset('images/utils/edit.png')}}"width="15%" alt=""></a></td>
-                        <td><a href=""><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
+                        <td><a href="{{ route('chemin_suppCompetence', ['id' => $uneCompetence['id']]) }}" onclick="return confirm('Voulez-vous vraiment supprimer cette competence ?')"><img src="{{asset('images/utils/delete.png')}}" width="15%" alt=""></a></td>
                     </tr>
                 @endforeach
 

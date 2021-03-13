@@ -39,14 +39,7 @@ class monPdo
      * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
      */
 
-    public function getLesProjets()
-    {
-        $req = "SELECT *
-                FROM projets";
-        $rs = $this->monPdo->query($req);
-        $lesLignes = $rs->fetchAll();
-        return $lesLignes;
-    }
+
 
     public function getUnMembre($login, $mdp)
     {
@@ -72,6 +65,10 @@ class monPdo
         $req = "INSERT INTO membre(nom, prenom, mail, login, mdp, telephone, role) values ('$nom', '$prenom', '$mail', '$login', '$mdp', '$tel', 0)";
         $this->monPdo->exec($req);
     }
+
+    ///
+    ///Competence
+    ///
 
     public function getLesCompetences()
     {
@@ -105,6 +102,15 @@ class monPdo
         $this->monPdo->exec($req);
     }
 
+    public function suppCompetence($id)
+    {
+        $req = "DELETE FROM competences
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+
+    ////
+    ////Experience
     ////
 
     public function getLesExperiences()
@@ -140,6 +146,15 @@ class monPdo
         $this->monPdo->exec($req);
     }
 
+    public function suppExperience($id)
+    {
+        $req = "DELETE FROM experiences
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+
+    ////
+    ////Scolarite
     ////
     public function getLaScolarite()
     {
@@ -170,6 +185,39 @@ class monPdo
     public function ajtScolarite($diplome, $filiere, $annee, $ordre, $ville)
     {
         $req = "INSERT INTO scolarite (diplome, filiere, annee, ordre, ville) values ('$diplome', '$filiere', '$annee', '$ordre', '$ville')";
+        $this->monPdo->exec($req);
+    }
+
+    public function suppFormation($id)
+    {
+        $req = "DELETE FROM scolarite
+                WHERE id = '$id'";
+        $this->monPdo->exec($req);
+    }
+    ///
+    ///Projets
+    ///
+    public function getLesProjets()
+    {
+        $req = "SELECT *
+                FROM projets";
+        $rs = $this->monPdo->query($req);
+        $lesLignes = $rs->fetchAll();
+        return $lesLignes;
+    }
+
+    public function getUnProjet($id)
+    {
+        $req = "SELECT *
+                FROM projets
+                WHERE id = '$id'";
+        $rs = $this->monPdo->query($req);
+        $laLigne = $rs->fetch();
+        return $laLigne;
+    }
+    public function ajtProjet($nom, $desc, $photo)
+    {
+        $req = "INSERT INTO projets (nom, description, photo) values ('$nom', '$desc', '$photo')";
         $this->monPdo->exec($req);
     }
 

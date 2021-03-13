@@ -7,6 +7,9 @@
                 <a class="nav-link" href="{{ route('chemin_editerCV') }}">Editer CV</a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('chemin_editerProjet') }}">Projets</a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="">Membres</a>
             </li>
             <li class="nav-item">

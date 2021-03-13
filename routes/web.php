@@ -85,6 +85,11 @@ Route::get('validerAjtScolarite',[
     'uses'=>'App\Http\Controllers\gestion@validerAjtScolarite'
 ]);
 
+Route::get('suppFormation',[
+    'as'=>'chemin_suppFormation',
+    'uses'=>'App\Http\Controllers\gestion@supprimerFormation'
+]);
+
 //Competence
 
 Route::get('majCompetence',[
@@ -103,6 +108,11 @@ Route::get('ajtCompetence',[
 Route::get('validerAjtCompetence',[
     'as'=>'chemin_validerAjtCompetence',
     'uses'=>'App\Http\Controllers\gestion@validerAjtCompetence'
+]);
+
+Route::get('suppCompetence',[
+    'as'=>'chemin_suppCompetence',
+    'uses'=>'App\Http\Controllers\gestion@supprimerCompetence'
 ]);
 
 //Experience
@@ -126,4 +136,43 @@ Route::get('validerAjtExperience',[
     'uses'=>'App\Http\Controllers\gestion@validerAjtExperience'
 ]);
 
+Route::get('suppExperience',[
+    'as'=>'chemin_suppExperience',
+    'uses'=>'App\Http\Controllers\gestion@supprimerExperience'
+]);
 
+//Projets
+Route::get('editerProjet',[
+    'as'=>'chemin_editerProjet',
+    'uses'=>'App\Http\Controllers\gestion@afficherEditerProjet'
+]);
+
+Route::get('ajtProjet',[
+    'as'=>'chemin_ajtProjet',
+    'uses'=>'App\Http\Controllers\gestion@afficherAjtProjet'
+]);
+
+Route::get('majProjet',[
+    'as'=>'chemin_majProjet',
+    'uses'=>'App\Http\Controllers\gestion@afficherMajProjet'
+]);
+
+Route::get('validerMajProjet',[
+    'as'=>'chemin_validerMajProjet',
+    'uses'=>'App\Http\Controllers\gestion@validerMajProjet'
+]);
+
+Route::get('validerAjtProjet',[
+    'as'=>'chemin_validerAjtProjet',
+    'uses'=>'App\Http\Controllers\gestion@validerAjtProjet'
+]);
+//Contact
+Route::get('contact',[
+    'as'=>'chemin_afficherContact',
+    'uses'=>'App\Http\Controllers\navigationPage@afficherContact'
+]);
+
+Route::get('validerContact',[
+    'as'=>'chemin_validerContact',
+    'uses'=>'App\Http\Controllers\gestion@validerContact'
+]);

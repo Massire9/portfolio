@@ -21,6 +21,10 @@ class gestion extends Controller
             ->with('lesExperiences', $lesExperiences);
     }
 
+    ///
+    ///Scolarite
+    ///
+
     public function afficherMajScolarite(Request $request)
     {
         $request = $request->all();
@@ -64,6 +68,21 @@ class gestion extends Controller
         return redirect(route('chemin_editerCV'));
     }
 
+    public function supprimerFormation(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
+
+        $id = $request['id'];
+        $monPdo->suppFormation($id);
+
+        return redirect(route('chemin_editerCV'));
+    }
+
+    ///
+    ///Competence
+    ///
+
     public function afficherMajCompetence(Request $request)
     {
         $request = $request->all();
@@ -104,7 +123,20 @@ class gestion extends Controller
         return redirect(route('chemin_editerCV'));
     }
 
+    public function supprimerCompetence(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
 
+        $id = $request['id'];
+        $monPdo->suppCompetence($id);
+
+        return redirect(route('chemin_editerCV'));
+    }
+
+    ///
+    ///Experience
+    ///
 
     public function afficherMajExperience(Request $request)
     {
@@ -148,4 +180,70 @@ class gestion extends Controller
         $monPdo->ajtExperience(addslashes($nom), addslashes($description), $date, $ordre);
         return redirect(route('chemin_editerCV'));
     }
+
+    public function supprimerExperience(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
+
+        $id = $request['id'];
+        $monPdo->suppExperience($id);
+
+        return redirect(route('chemin_editerCV'));
+    }
+    ///
+    ///Projet
+    ///
+    public function afficherEditerProjet()
+    {
+        $monPdo = new monPdo();
+        $lesProjets = $monPdo->getLesProjets();
+
+        return view('editerProjets')
+            ->with('lesProjets', $lesProjets);
+    }
+
+    public function afficherMajProjet(Request $request)
+    {
+        $request = $request->all();
+        $id = $request['id'];
+
+        $monPdo = new monPdo();
+        $leProjet = $monPdo->getLeProjet($id);
+
+        return view('majProjet')
+            ->with('leProjet', $leProjet);
+    }
+    public function afficherAjtProjet()
+    {
+        return view('ajouterProjet');
+    }
+
+    public function validerAjtProjet(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
+        $imgs = $request['images'];
+        $nom = $request['nom'];
+        $desc = $request['description'];
+        //$ordre = $request['ordre'];
+
+        $monPdo->ajtProjet($nom, $desc, $imgs);
+        return back();
+    }
+
+    public function validerContact(Request $request)
+    {
+        $request = $request->all();
+        $to_name = '';
+        $to_email = "toure.massire@btsvoillaume.fr";
+        $data = array(‘name’=>”Cloudways (session('membre')['nom']." ". session('membre')['prenom'])”, “body” => “A test mail”);
+
+        Mail::send(‘mail’, $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)
+                ->subject("Laravel Test Mail");
+        $message->from("SENDER_EMAIL_ADDRESS","Test Mail");
+        });
+    }
+
 }

@@ -22,6 +22,9 @@
                     <a class="nav-link" href="">Veille</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('chemin_afficherContact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="">À propos de moi</a>
                 </li>
                 @if(!is_array(session('membre')))
