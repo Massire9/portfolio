@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\MyApp\monPdo;
+use Faker\Factory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Symfony\Component\HttpFoundation\RequestStack;
-
+use App\Mail\Contact;
 class gestion extends Controller
 {
     public function afficherEditerCV()
@@ -228,22 +230,24 @@ class gestion extends Controller
         $desc = $request['description'];
         //$ordre = $request['ordre'];
 
-        $monPdo->ajtProjet($nom, $desc, $imgs);
+        $monPdo->ajtProjet($nom, addslashes($desc), $imgs);
         return back();
     }
 
     public function validerContact(Request $request)
     {
         $request = $request->all();
-        $to_name = '';
-        $to_email = "toure.massire@btsvoillaume.fr";
-        $data = array(‘name’=>”Cloudways (session('membre')['nom']." ". session('membre')['prenom'])”, “body” => “A test mail”);
+        $mail = new Contact($request);
 
-        Mail::send(‘mail’, $data, function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)
-                ->subject("Laravel Test Mail");
-        $message->from("SENDER_EMAIL_ADDRESS","Test Mail");
-        });
+        Mail::to('mtoure@condorcet93.fr')
+            ->send($mail);
+
+        $erreurs = null;
+        $messages[] = "Votre message a bien été envoyé";
+
+        return view('contact')
+            ->with('erreurs', $erreurs)
+            ->with('messages', $messages);
     }
 
 }

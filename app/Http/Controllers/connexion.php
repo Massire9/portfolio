@@ -20,7 +20,8 @@ class connexion extends Controller
         $monPdo = new monPdo();
         $login = $request['login'];
         $mdp = $request['mdp'];
-        $infoMembre = $monPdo->getUnMembre($login, $mdp);
+
+        $infoMembre = $monPdo->getUnMembre(htmlentities($login), htmlentities($mdp));
 
         if(is_array($infoMembre))
         {
@@ -89,7 +90,7 @@ class connexion extends Controller
         }
         else
         {
-            $monPdo->inscription($nom, $prenom, $email, $login, $mdp, $tel);
+            $monPdo->inscription(htmlentities($nom), htmlentities($prenom), htmlentities($email), htmlentities($login), htmlentities($mdp), htmlentities($tel));
             $erreurs = null;
             $view = view('connexion')
                 ->with('erreurs',$erreurs);

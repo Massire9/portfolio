@@ -172,7 +172,12 @@ Route::get('contact',[
     'uses'=>'App\Http\Controllers\navigationPage@afficherContact'
 ]);
 
-Route::get('validerContact',[
+Route::post('validerContact',[
     'as'=>'chemin_validerContact',
     'uses'=>'App\Http\Controllers\gestion@validerContact'
+]);
+
+Route::get('veille',[
+    'as'=>'chemin_afficherVeille',
+    'uses'=>'App\Http\Controllers\navigationPage@afficherVeille'
 ]);

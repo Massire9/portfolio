@@ -1,7 +1,7 @@
 @extends('navbar')
 @section('contenu1')
 @includeWhen($erreurs != null , 'erreurs', ['erreurs' => $erreurs])
-<form method="POST" id="form_connexion" class="shadow-lg" action="{{ route('chemin_validerConnexion') }}">
+<form method="POST" id="form_connexion" class="" action="{{ route('chemin_validerConnexion') }}">
     <fieldset id="form1" form="form_connexion" class="container-fluid">
         <legend class="text-center">Se connecter</legend>
         <div class="row form-group text-center">

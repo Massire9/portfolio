@@ -5,31 +5,131 @@
 }
 #erreurs
 {
-    background-color: rgb(237, 210, 229);
-    color: rgb(203, 28, 128);
-    font-size: 1.1em;
-    width: 95%;
+    border: 1px solid  #FF0000;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 #message
 {
-    background-color: rgb(99, 184, 255);
-    color: rgb(0, 0, 205);
-    font-size: 1.1em;
-    width: 95%;
+    border: 1px solid #ff5100;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
 }
-#sisr
+#sisr, #slam
 {
-    margin-left: 15%;
     text-align: center;
 }
 
-#slam
-{
-    margin-right: 15%;
-    text-align: center;
-}
+
+
 
 #cardProjet{
-    width: 50%;
+    width: 100%;
+}
+
+#cardVeille
+{
+    padding: 0;
+    border: 1px solid #dd0707;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: black;
+}
+
+#descVeille
+{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+
+}
+#descVeille h5
+{
+    text-decoration: underline;
+}
+#maVeille
+{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+
+}
+#maVeille h5
+{
+    text-decoration: underline;
+}
+
+#theme
+{
+    color: #5f19be;
+    font-weight: bold;
+}
+#listeOutil
+{
+    color: #ff6900;
+    font-weight: bold;
+}
+#titreVeille
+{
+    font-size: 52px;
+}
+#googleActu
+{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+}
+#fluxrss
+{
+    background: rgb(255,105,0);
+    background: linear-gradient(to right, rgba(255,105,0,1), rgba(153,0,239,1));
+    min-width: 100%;
+}
+
+
+#navbarVisiteur
+{
+    font-size: 15px;
+}
+#navbarVisiteur :hover
+{
+    color: white;
+}
+
+#navbarVisiteur :active
+{
+
+}
+
+#listeOptionSISR
+{
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+#listeOptionSLAM
+{
+    color: darkorange;
+    font-weight: bold;
+}
+
+#sio
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 115%;
+}
+#optionSIO
+{
+    background: rgb(255,105,0);
+    background: linear-gradient(to right, rgba(255,105,0,1), rgba(153,0,239,1));
+    min-width: 100%;
+    font-size: 115%;
 }

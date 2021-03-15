@@ -1,22 +1,20 @@
 @extends('navbar')
 @section('contenu1')
-    <div class="table">
-        <table class="table table-striped table-condensed" id ="scolarite">
+    <div class="table-responsive-xl">
+        <table class="table">
             <thead>
-            <tr>
-                <th colspan="4"> Scolarité</th>
-            </tr>
-            <tr>
-                <th scope="col" style=" width: 10%">Date</th>
-                <th scope="col" style=" width: 20%">Diplome</th>
-                <th scope="col" style=" width: 45%">Filière</th>
-                <th scope="col" style=" width: 45%">Ville</th>
-
-            </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Diplome</th>
+                    <th scope="col">Filiere</th>
+                    <th scope="col">Ville</th>
+                </tr>
             </thead>
             <tbody>
-            @foreach($lesFormations as $uneFormation)
+            @foreach($lesFormations as $key => $uneFormation)
                 <tr>
+                    <th scope="row">{{$key}}</th>
                     <td>{{$uneFormation['annee']}}</td>
                     <td>{{$uneFormation['diplome']}}</td>
                     <td>{{$uneFormation['filiere']}}</td>
@@ -26,48 +24,45 @@
             </tbody>
         </table>
     </div>
-    <div class="table">
-        <table class="table table-striped table-condensed" id ="experience">
-            <thead>
-            <tr>
-                <th colspan="4"> Experiences</th>
-            </tr>
-            <tr>
-                <th scope="col" style=" width: 10%">Nom</th>
-                <th scope="col" style=" width: 5%">Date</th>
-                <th scope="col" style=" width: 45%">Description</th>
 
-            </tr>
+    <div class="table-responsive-sm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" width="6%">#</th>
+                    <th scope="col" width="31%">Nom</th>
+                    <th scope="col">Description</th>
+                </tr>
             </thead>
             <tbody>
-            @foreach($lesExperiences as $uneCompetence)
-            <tr>
-                    <td>{{$uneCompetence['nom']}}</td>
-                    <td>{{$uneCompetence['date']}}</td>
-                    <td>{{$uneCompetence['description']}}</td>
-            </tr>
+            @foreach($lesExperiences as $key => $uneExperience)
+                <tr>
+                    <th scope="row">{{$key}}</th>
+                    <td>{{$uneExperience['nom']}}</td>
+                    <td>{{$uneExperience['description']}}</td>
+                </tr>
             @endforeach
             </tbody>
         </table>
     </div>
-    <div class="table">
-        <table class="table table-striped table-condensed" id ="competences">
+
+    <div class="table-responsive">
+        <table class="table" id="competences">
             <thead>
             <tr>
-                <th colspan="4"><h5>Competences</h5> </th>
-            </tr>
-            <tr>
-                <th scope="col" style=" width: 10%">Nom</th>
-                <th scope="col" style=" width: 45%">Description</th>
+                <th scope="col" width="6%">#</th>
+                <th scope="col" width="31%">Nom</th>
+                <th scope="col">Description</th>
 
             </tr>
             </thead>
             <tbody>
-            @foreach($lesCompetences as $uneCompetence)
-            <tr>
+            @foreach($lesCompetences as $key => $uneCompetence)
+                <tr>
+                    <th scope="row">{{$key}}</th>
                     <td>{{$uneCompetence['nom']}}</td>
                     <td>{{$uneCompetence['description']}}</td>
-            </tr>
+                </tr>
             @endforeach
             </tbody>
         </table>

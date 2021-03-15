@@ -16,9 +16,11 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $contact;
+    public function __construct(Array $contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -28,6 +30,7 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->view('contact');
+        return $this->from(session('membre')['mail'])
+            ->view('mail');
     }
 }
