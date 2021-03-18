@@ -59,6 +59,11 @@ Route::get('deconnexion',[
     'as'=>'chemin_deconnexion',
     'uses'=>'App\Http\Controllers\connexion@deconnexion'
 ]);
+
+Route::post('mdpOublie',[
+    'as'=>'chemin_mdpOublie',
+    'uses'=>'App\Http\Controllers\connexion@mdpOublie'
+]);
                                                 /*Controleur Gestion*/
 Route::get('editerCV',[
     'as'=>'chemin_editerCV',

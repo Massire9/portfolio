@@ -62,14 +62,8 @@ class monPdo
 
     public function inscription($nom, $prenom, $mail, $login, $mdp, $tel)
     {
-        $sth = $dbh->prepare("INSERT INTO membre(nom, prenom, mail, login, mdp, telephone, role) values (':nom', ':prenom', ':mail', ':login', ':mdp', ':tel', 0)");
-        $sth->bindParam(':nom', $nom, PDO::PARAM_STR, 32);
-        $sth->bindParam(':prenom', $prenom, PDO::PARAM_STR, 32);
-        $sth->bindParam(':login', $login, PDO::PARAM_STR, 32);
-        $sth->bindParam(':mdp', $mdp, PDO::PARAM_STR, 255);
-        $sth->bindParam(':mail', $mail, PDO::PARAM_STR, 255);
-        $sth->bindParam(':tel', $tel, PDO::PARAM_INT);
-        $sth->execute();
+        $req ="INSERT INTO membre(nom, prenom, mail, login, mdp, telephone, role) values ('$nom', '$prenom', '$mail', '$login', '$mdp', '$tel', 0)";
+        $this->monPdo->exec($req);
     }
 
     ///
@@ -224,6 +218,16 @@ class monPdo
     public function ajtProjet($nom, $desc, $photo)
     {
         $req = "INSERT INTO projets (nom, description, photo) values ('$nom', '$desc', '$photo')";
+        $this->monPdo->exec($req);
+    }
+
+    //
+    //
+    //
+
+    public function nvMdp($mail, $token)
+    {
+        $req = "UPDATE membre SET mdp = '$token' WHERE mail = '$mail'";
         $this->monPdo->exec($req);
     }
 

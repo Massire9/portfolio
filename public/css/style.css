@@ -133,3 +133,17 @@
     min-width: 100%;
     font-size: 115%;
 }
+#form_connexion{
+    margin-top: auto;
+}
+#accueil
+{
+    background-image: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80") ;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}

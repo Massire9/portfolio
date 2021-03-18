@@ -17,6 +17,7 @@
     {{--<link href="{{ asset('js/bootstrap.min.js') }}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/color.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="{{ asset('js/app.js') }}">
 

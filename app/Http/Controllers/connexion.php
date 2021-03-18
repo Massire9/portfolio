@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MyApp\monPdo;
+use OAuthProvider;
+use Illuminate\Support\Str;
+use App\Mail\Contact;
+use Illuminate\Support\Facades\Mail;
 
 class connexion extends Controller
 {
@@ -17,11 +21,29 @@ class connexion extends Controller
     public function validerConnexion(Request $request)
     {
         $request = $request->all();
-        $monPdo = new monPdo();
-        $login = $request['login'];
-        $mdp = $request['mdp'];
+        if($request['login'] == "" || $request['mdp'] == "")
+        {
+            if($request['login'] == ""){ $erreurs [] = "Veuillez entrer votre login."; }
+            if($request['mdp'] == ""){ $erreurs[] = "Veuillez entrer un mot de passe";}
+            return view('connexion')
+                ->with('erreurs', $erreurs);
+        }
 
-        $infoMembre = $monPdo->getUnMembre(htmlentities($login), htmlentities($mdp));
+        $monPdo = new monPdo();
+        $login = htmlentities($request['login']);
+        $mdp = htmlentities($request['mdp']);
+
+
+        $lesMembres = $monPdo->getLesMembre();
+
+        $infoMembre = null;
+        foreach($lesMembres as $unMembre)
+        {
+            if(password_verify($mdp, $unMembre['mdp']) && $login == $unMembre['login'])
+            {
+                $infoMembre = $unMembre;
+            }
+        }
 
         if(is_array($infoMembre))
         {
@@ -38,7 +60,7 @@ class connexion extends Controller
         }
         else
         {
-            $erreurs = ["L'identifiant ou le mot de passe entré n'existent pas"];
+            $erreurs[] = "L'identifiant ou le mot de passe entrés n'existent pas";
             $view = view('connexion')
                     ->with('erreurs', $erreurs);
         }
@@ -57,12 +79,12 @@ class connexion extends Controller
         $monPdo = new monPdo();
         $lesMembres = $monPdo->getLesMembre();
 
-        $nom = $request['nom'];
-        $prenom = $request['prenom'];
-        $email = $request['email'];
-        $login = $request['login'];
-        $mdp = $request['mdp'];
-        $tel = $request['tel'];
+        $nom = htmlentities($request['nom']);
+        $prenom = htmlentities($request['prenom']);
+        $email = htmlentities($request['email']);
+        $login = htmlentities($request['login']);
+        $mdp = htmlentities($request['mdp']);
+        $tel = htmlentities($request['tel']);
 
         $existMail = false;
         $existLogin = false;
@@ -90,7 +112,7 @@ class connexion extends Controller
         }
         else
         {
-            $monPdo->inscription(htmlentities($nom), htmlentities($prenom), htmlentities($email), htmlentities($login), htmlentities($mdp), htmlentities($tel));
+            $monPdo->inscription($nom, $prenom, $email, $login, password_hash($mdp, PASSWORD_DEFAULT), $tel);
             $erreurs = null;
             $view = view('connexion')
                 ->with('erreurs',$erreurs);
@@ -103,5 +125,51 @@ class connexion extends Controller
         session(['membre' => null]);
         $erreurs = null;
         return redirect(route('chemin_connexion'));
+    }
+
+    public function mdpOublie(Request $request)
+    {
+        $request = $request->all();
+        $monPdo = new monPdo();
+        if ($request['mail'] == "") {
+            $erreurs[] = "Veuillez entrer une adresse mail";
+            return view('connexion')
+                ->with('erreurs', $erreurs);
+        }
+
+        $lesMembres = $monPdo->getLesMembre();
+        $flag = false;
+
+        foreach($lesMembres as $unMembre)
+        {
+            if($unMembre['mail'] == $request['mail'])
+            {
+                $flag = true;
+            }
+        }
+
+        if($flag)
+        {
+            $token = Str::random(10);
+            $c = array("mail" => $request['mail'], "token" => $token, "use" => "mdp");
+
+
+
+            $monPdo->nvMdp($request['mail'], addslashes(password_hash($token, PASSWORD_DEFAULT)));
+            $contact = new Contact($c);
+            Mail::to($request['mail'])
+                ->send($contact);
+
+            $erreurs = null;
+            $messages[] = "Votre mot de passe a bien été modifié, vous allez recevoir un mail.";
+            return back()->with('message', $messages)
+                        ->with('erreurs', $erreurs);
+        }
+        else
+        {
+            $erreurs[] = "Il n'y a aucune adresse mail qui correspond";
+            return back()->with('erreurs', $erreurs);
+        }
+
     }
 }

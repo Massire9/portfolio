@@ -30,7 +30,20 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->from(session('membre')['mail'])
-            ->view('mail');
+        if(in_array("mdp", $this->contact))
+        {
+            return $this->from($this->contact['mail'])
+                ->view('mail.mdpOublie');
+        }
+        else
+        {
+            return $this->from(session('membre')['mail'])
+                ->view('mail.mail');
+        }
+    }
+
+    public function mdpOublie()
+    {
+
     }
 }
