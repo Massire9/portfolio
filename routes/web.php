@@ -17,12 +17,17 @@ Route::get('/', function () {
     return view('accueil');
 });
                                                 /*Controleur Navigation*/
+Route::get('accueil',[
+    'as'=>'chemin_accueil',
+    'uses'=>'App\Http\Controllers\navigationPage@accueil'
+]);
+
 Route::get('sio',[
     'as'=>'chemin_sio',
     'uses'=>'App\Http\Controllers\navigationPage@sio'
 ]);
 
-Route::get('listeProjets',[
+Route::get('projets',[
     'as'=>'chemin_listeProjets',
     'uses'=>'App\Http\Controllers\navigationPage@listeProjets'
 ]);
@@ -30,6 +35,16 @@ Route::get('listeProjets',[
 Route::get('cv',[
     'as'=>'chemin_cv',
     'uses'=>'App\Http\Controllers\navigationPage@cv'
+]);
+
+Route::get('stages',[
+    'as'=>'chemin_listeStages',
+    'uses'=>'App\Http\Controllers\navigationPage@afficherStages'
+]);
+
+Route::get('informations',[
+    'as'=>'chemin_info',
+    'uses'=>'App\Http\Controllers\navigationPage@afficherInfos'
 ]);
 
 

@@ -1,3 +1,6 @@
+body, html, #page {
+    height: 100%;
+}
 #login, #mdp, #nom, #prenom, #email, #tel, #corps
 {
     margin: 0 auto;
@@ -23,11 +26,13 @@
     text-align: center;
 }
 
-
+#pied
+{
+    bottom:0;
+}
 
 
 #cardProjet{
-    width: 100%;
 }
 
 #cardVeille
@@ -138,12 +143,61 @@
 }
 #accueil
 {
-    background-image: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80") ;
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    filter: blur(6px);
+}
 
 
+#pdp
+{
+    border-style: solid;
+    border-color: #9900ef;
+}
+
+#cardInfos
+{
+    font-size: 17px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ff6900;
+}
+#cardInfosApres
+{
+    font-size: 17px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ff6900;
+}
+#cardProjetPair
+{
+    width: 100%;
+    border-style: solid;
+    border-color: #ff6900;
+}
+
+#cardProjetImpair
+{
+    width: 100%;
+    border-style: solid;
+    border-color: #9900ef;
+}
+#aa:hover{
+    color:purple;
+
+}
+#titreAccueil
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    font-family: Impact;
 }

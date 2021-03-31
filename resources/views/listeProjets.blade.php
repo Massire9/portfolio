@@ -8,8 +8,8 @@
     <div class="container">
         <div class="row justify-content-around">
             @foreach($lesProjets as $i => $unProjet)
-                <div class="col-sm-4 mb-3">
-                    <div class="card" id="cardProjet">
+                <div class="col-sm-4 mb-3" >
+                    <div class="card" id="{{ ($i %2 == 0) ? "cardProjetPair" : "cardProjetImpair"}}">
                         @php
                             $lesImages = explode(";", $unProjet['photo']);
                         @endphp
@@ -77,4 +77,5 @@
         </div>
     </div>
 @endsection
+@extends('pied')
 

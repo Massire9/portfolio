@@ -231,4 +231,15 @@ class monPdo
         $this->monPdo->exec($req);
     }
 
+    //
+    //Stages
+    //
+
+    public function getLesStages()
+    {
+        $req = "SELECT * FROM stages";
+        $rs = $this->monPdo->query($req);
+        return $rs->fetchAll();
+    }
+
 }

@@ -24,3 +24,4 @@
         </table>
     </form>
 @endsection
+@extends('pied')

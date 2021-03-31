@@ -72,4 +72,22 @@ class navigationPage extends Controller
                 ->with('liens', $liens)
                 ->with('dates', $dates);
     }
+
+    public function afficherStages()
+    {
+        $monPdo = new monPdo();
+        $lesStages = $monPdo->getLesStages();
+        return view('listeStages')
+            ->with('lesStages', $lesStages);
+    }
+
+    public function afficherInfos()
+    {
+        return view('infos');
+    }
+
+    public function accueil()
+    {
+        return view('accueil');
+    }
 }
