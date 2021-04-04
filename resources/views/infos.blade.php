@@ -11,14 +11,10 @@
                     <div class="card" id="cardInfos">
                         <div class="card-body">
                             <p class="card-text text-center">
-                                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en
-                                page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis
-                                les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour
-                                réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
-                                siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu
-                                n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles
-                                Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-                                dans des applications de mise en page de texte, comme Aldus PageMaker.
+                                Je m'appelle Massiré, 19 ans, je suis domicilié à Rosny-sous-Bois.<br>
+                                J'ai commencé l'informatique avec un <b style="color: purple">BAC STI2D option SIN</b>, j'ai du donc effectué un projet de 6 mois avec 4 camarades :
+                                nous devions réaliser un arroisoir automatique.
+                                Je suis actuellement en seconde année de <b style="color: darkorange">BTS SIO option SLAM</b>.
                             </p>
                         </div>
                     </div>
@@ -39,14 +35,11 @@
                 <div class="card col-md-6 mb-5" id="cardInfosApres" style="width: 25rem">
                     <div class="card-body">
                         <p class="card-text text-center">
-                            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en
-                            page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis
-                            les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour
-                            réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq
-                            siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu
-                            n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles
-                            Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion
-                            dans des applications de mise en page de texte, comme Aldus PageMaker.
+                            Mon projet professionnel est de dévenir développeur web.
+                            Je voudrais poursuivre mes études jusqu'en BAC +5 dans le développement web en alternance.
+                            Je souhaite par le biais de l’apprentissage en l’alternance participer à la construction et au développement de l’entreprise,
+                            en grandissant avec elle, en apportant mes compétences, ma motivation et en partageant ma passion de la haute technologie.
+                            À terme je souhaiterais vivre à l'étranger (Turquie ou Albanie).
                         </p>
                     </div>
                 </div>
