@@ -1,0 +1,203 @@
+body, html, #page {
+    height: 100%;
+}
+#login, #mdp, #nom, #prenom, #email, #tel, #corps
+{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#erreurs
+{
+    border: 1px solid  #FF0000;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#message
+{
+    border: 1px solid #ff5100;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+#sisr, #slam
+{
+    text-align: center;
+}
+
+#pied
+{
+    bottom:0;
+}
+
+
+#cardProjet{
+}
+
+#cardVeille
+{
+    padding: 0;
+    border: 1px solid #dd0707;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: black;
+}
+
+#descVeille
+{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+
+}
+#descVeille h5
+{
+    text-decoration: underline;
+}
+#maVeille
+{
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+
+}
+#maVeille h5
+{
+    text-decoration: underline;
+}
+
+#theme
+{
+    color: #5f19be;
+    font-weight: bold;
+}
+#listeOutil
+{
+    color: #ff6900;
+    font-weight: bold;
+}
+#titreVeille
+{
+    font-size: 52px;
+}
+#googleActu
+{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+}
+#fluxrss
+{
+    background: rgb(255,105,0);
+    background: linear-gradient(to right, rgba(255,105,0,1), rgba(153,0,239,1));
+    min-width: 100%;
+}
+
+
+#navbarVisiteur
+{
+    font-size: 15px;
+}
+#navbarVisiteur :hover
+{
+    color: white;
+}
+
+#navbarVisiteur :active
+{
+
+}
+
+#listeOptionSISR
+{
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+#listeOptionSLAM
+{
+    color: darkorange;
+    font-weight: bold;
+}
+
+#sio
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 115%;
+}
+#optionSIO
+{
+    background: rgb(255,105,0);
+    background: linear-gradient(to right, rgba(255,105,0,1), rgba(153,0,239,1));
+    min-width: 100%;
+    font-size: 115%;
+}
+#form_connexion{
+    margin-top: auto;
+}
+#accueil
+{
+    background: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: blur(6px);
+}
+
+
+#pdp
+{
+    border-style: solid;
+    border-color: #9900ef;
+}
+
+#cardInfos
+{
+    font-size: 17px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ff6900;
+}
+#cardInfosApres
+{
+    font-size: 17px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ff6900;
+}
+#cardProjetPair
+{
+    width: 100%;
+    border-style: solid;
+    border-color: #ff6900;
+}
+
+#cardProjetImpair
+{
+    width: 100%;
+    border-style: solid;
+    border-color: #9900ef;
+}
+#aa:hover{
+    color:purple;
+
+}
+#titreAccueil
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    font-family: Impact;
+}
